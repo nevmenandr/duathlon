@@ -214,7 +214,7 @@
         <div class="span6">
           <a name="faq"></a>
           <h4>Что это?</h4>
-          <p>Соединение игры шахматы и игры го в одной партии.</p>
+          <p>Соединение игры шахматы и игры го в одной партии. Соперники используют одну доску и один цвет, играя одновременно в обе игры. Побеждает тот, кто одинаково хорошо владеет обеими игровыми практиками. В правилах нет ничего, что заставляло бы играть «необычно»: для обеих игр главной остается нацеленность на выигрыш.</p>
 
           <h4>Это очередная попытка разнообразить шахматы типа шахмат Фишера?</h4>
           <p>Нет, и шахматы, и го остаются в своем классическом виде. Ни правила, ни игровое поле, ни фигуры не меняются.</p>
@@ -226,7 +226,7 @@
           <p>Это возможность для игрока показать свое мастерство и в шахматах, и в го, не пересаживаясь за другую доску. И еще это возможность продемонстрировать способность контролировать сразу два сложных игровых процесса.</p>
 
           <h4>Что за странное слово «дуатлон»?</h4>
-          <p>Как раз странное слово то, которое все знают, «биатлон». Оно составлено из корней разных языков: латинского (bi) и греческого (athlon). А вот «дуатлон» не странное, оно целиком пришло из греческого и значит то же самое: двойное состязание.</p>
+          <p>Как раз странное именно то слово, которое все знают, «биатлон». Оно составлено из корней разных языков: латинского (bi) и греческого (athlon). А вот «дуатлон» не странное, оно целиком пришло из греческого, и значит то же самое: двойное состязание.</p>
 
         </div>
       </div>
@@ -278,7 +278,7 @@
       <div class="featurette">
         <img class="featurette-image pull-right" src="gifs/1chegoss.gif">
         <h2 class="featurette-heading">GIF-анимация игры. <span class="muted">Полная картина от первого до последнего хода.</span></h2>
-        <p class="lead">В качестве образца взята <a href="https://github.com/nevmenandr/duathlon/games/1.pgn">игра</a> с открытого чемпионата Кэмбриджа по шахматам 2023-го года между Генри Адамсом и Майклом Адамсом, закончившаяся вничью после 23-го хода. Одновременно показана <a href="https://github.com/nevmenandr/duathlon/games/1.sgf">игра</a> между Масаюки Карахаши и Ацуши Ишида, сыгранная в 1987 году. Партия в го закончилась победой черных. Так как шахматная партия длилась совокупно 46 (полу)ходов, а партия в го только 43, после 43-го хода го игра останавливается. </p>
+        <p class="lead">В качестве образца взята <a href="https://github.com/nevmenandr/duathlon/blob/main/games/1.pgn">игра</a> с открытого чемпионата Кэмбриджа по шахматам 2023-го года между Генри Адамсом и Майклом Адамсом, закончившаяся вничью после 23-го хода. Одновременно показана <a href="https://github.com/nevmenandr/duathlon/blob/main/games/1.sgf">игра</a> между Масаюки Карахаши и Ацуши Ишида, сыгранная в 1987 году. Партия в го закончилась победой черных. Так как шахматная партия длилась совокупно 46 (полу)ходов, а партия в го только 43, после 43-го хода го игра останавливается. </p>
       </div>
 
       <hr class="featurette-divider">
@@ -294,7 +294,7 @@
       
       <h2>Код</h2>
       
-      <p><a href="https://github.com/nevmenandr/duathlon/code/generate_game.py">Программный код на Python</a> для отображения на одной доске двух партий — в шахматы и в го.</p> 
+      <p><a href="https://github.com/nevmenandr/duathlon/blob/main/code/generate_game.py">Программный код на Python</a> для отображения на одной доске двух партий — в шахматы и в го.</p> 
       
       <p>Шахматные партии принимаются в формате PGN. <a href="https://github.com/rozim/ChessData">Здесь</a> можно найти большую коллекцию партий в этом формате.
       
@@ -306,10 +306,10 @@
 
       <div class="hero-unit">
         <p>python generate_game.py chess_game.pgn go_game.sgf pictures_dir</p>
-        <p><a href="https://github.com/nevmenandr/duathlon/code/generate_game.py" class="btn btn-primary btn-large">Скачать код</a></p>
+        <p><a href="https://raw.githubusercontent.com/nevmenandr/duathlon/main/code/generate_game.py" class="btn btn-primary btn-large">Скачать код</a></p>
       </div>
       
-      <p>Если имена файлов или директории не указаны, то будут взяты значения по умолчанию: файл <a href="https://github.com/nevmenandr/duathlon/games/1.pgn">1.pgn</a>, файл <a href="https://github.com/nevmenandr/duathlon/games/1.sgf">1.sgf</a> и имя директории: "<a href="https://github.com/nevmenandr/duathlon/pics">chess-gif</a>".</p>
+      <p>Если имена файлов или директории не указаны, то будут взяты значения по умолчанию: файл <a href="https://github.com/nevmenandr/duathlon/blob/main/games/1.pgn">1.pgn</a>, файл <a href="https://github.com/nevmenandr/duathlon/blob/main/games/1.sgf">1.sgf</a> и имя директории: "<a href="https://github.com/nevmenandr/duathlon/tree/main/pics">chess-gif</a>".</p>
       
       <p>Картинки можно соединить в gif-анимацию с помощью вот такого скрипта:</p>
       
@@ -326,7 +326,7 @@ imageio.mimsave(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format="GIF",<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration=3,<br/>
 )</p>
-        <p><a href="https://github.com/nevmenandr/duathlon/code/gifmaker.py" class="btn btn-primary btn-large">Скачать код</a></p>
+        <p><a href="https://raw.githubusercontent.com/nevmenandr/duathlon/main/code/gifmaker.py" class="btn btn-primary btn-large">Скачать код</a></p>
       </div>
       
       <p>&nbsp;</p>
