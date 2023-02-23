@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Шахматный дуатлон: шахматы и го на одной доске</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chess and Go played on the same board">
+    <meta name="author" content="Boris Orekhov">
+
+    <!-- Le styles -->
+    <link href="jscss/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+      
+      
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+      
+      
+    </style>
+    <link href="jscss/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="jscss/html5shiv.js"></script>
+    <![endif]-->
+
+
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#faq">Вопросы</a></li>
+          <li><a href="#rules">Правила</a></li>
+          <li><a href="#demo">Демонстрация</a></li>
+          <li><a href="#code">Код</a></li>
+        </ul>
+        <h3 class="muted">Шахматный дуатлон</h3>
+      </div>
+
+      <hr>
+
+      <div class="jumbotron">
+        <h1>Шахматы и го в одной партии на одной доске!</h1>
+        <p class="lead">Одна из разновидностей го играется на доске размером 9х9, при этом камни помещаются на перекрестья прямых, образующих 64 клетки. Клеток столько же, сколько и в шахматах, но в го клетки свободны, а шахматные фигуры не занимают перекрестий. Почему бы не объединить две игры на одной доске?</p>
+        <a class="btn btn-large btn-success" href="#demo">Посмотреть</a>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid marketing">
+        <div class="span6">
+          <a name="faq"></a>
+          <h4>Что это?</h4>
+          <p>Соединение игры шахматы и игры го в одной партии.</p>
+
+          <h4>Это очередная попытка разнообразить шахматы типа шахмат Фишера?</h4>
+          <p>Нет, и шахматы, и го остаются в своем классическом виде. Ни правила, ни игровое поле, ни фигуры не меняются.</p>
+
+        </div>
+
+        <div class="span6">
+          <h4>Зачем?</h4>
+          <p>Это возможность для игрока показать свое мастерство и в шахматах, и в го, не пересаживаясь за другую доску. И еще это возможность продемонстрировать способность контролировать сразу два сложных игровых процесса.</p>
+
+          <h4>Что за странное слово «дуатлон»?</h4>
+          <p>Как раз странное слово то, которое все знают, «биатлон». Оно составлено из корней разных языков: латинского (bi) и греческого (athlon). А вот «дуатлон» не странное, оно целиком пришло из греческого и значит то же самое: двойное состязание.</p>
+
+        </div>
+      </div>
+
+      <hr>
+      
+      <a name="rules"></a>
+      <h2>Правила</h2>
+      
+      <p>Два игрока ведут друг с другом одновременно партию в шахматы и в го (поле 9х9). Соблюдаются все обычные правила шахмат и го.</p>
+      
+      <p>Шахматные фигуры ставятся на клетки шахматной доски, камни го ставятся на перекрестья линий, очерчивающих клетки.</p>
+      
+      <p>Шахматные ходы и ходы го делаются по очереди: сначала делается ход белыми фигурами, затем на доску ставится черный камень, затем делается ход черными фигурами, затем на доску ставится белый камень.</p>
+      
+      <p>У игроков один цвет для шахматных фигур и для камней го. Когда в шахматы или в го игра заканчивается, то заканчивается и партия в целом.</p> 
+      
+      <p>За победу в шахматах дается некоторое количество очков, которое прибавляется к очкам в го, выигранным к этому моменту. Победитель определяется суммой набранных очков в шахматы и в го.</p> 
+      
+      <p>Если в шахматах ни одна из сторон не победила, берется компьютерная оценка последней позиции и пересчитывается в очки, которые плюсуются к очкам го.</p>
+      
+      <hr>
+      
+      <a name="demo"></a>
+      <h2>Демонстрация</h2>
+      
+      
+      </div> <!-- /container -->
+      
+      <div class="container">
+      
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="pics/000.png">
+        <h2 class="featurette-heading">Расстановка перед игрой. <span class="muted">Ходы еще не сделаны.</span></h2>
+        <p class="lead">Шахматная доска 8х8, она же доска для игры в го 9х9. Все шахматные фигуры на своих местах. По традиции го на игровом поле имеется 9 меток вокруг центрального узла. Камни на доске пока не появились.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="pics/020.png">
+        <h2 class="featurette-heading">Партия началась. <span class="muted">Разыграна защита двух коней.</span></h2>
+        <p class="lead">И в шахматы, и в го сделаны первые ходы. Черные камни занимают центральные поля.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="gifs/1chegoss.gif">
+        <h2 class="featurette-heading">GIF-анимация игры. <span class="muted">Полная картина от первого до последнего хода.</span></h2>
+        <p class="lead">В качестве образца взята <a href="https://github.com/nevmenandr/duathlon/games/1.pgn">игра</a> с открытого чемпионата Кэмбриджа по шахматам 2023-го года между Генри Адамсом и Майклом Адамсом, закончившаяся вничью после 23-го хода. Одновременно показана <a href="https://github.com/nevmenandr/duathlon/games/1.sgf">игра</a> между Масаюки Карахаши и Ацуши Ишида, сыгранная в 1987 году. Партия в го закончилась победой черных. Так как шахматная партия длилась совокупно 46 (полу)ходов, а партия в го только 43, после 43-го хода го игра останавливается. </p>
+      </div>
+
+      <hr class="featurette-divider">
+      
+      
+      
+      
+      </div>
+      
+      <div class="container-narrow">
+      
+      <a name="code"></a>
+      
+      <h2>Код</h2>
+      
+      <p><a href="https://github.com/nevmenandr/duathlon/code/generate_game.py">Программный код на Python</a> для отображения на одной доске двух партий — в шахматы и в го.</p> 
+      
+      <p>Шахматные партии принимаются в формате PGN. <a href="https://github.com/rozim/ChessData">Здесь</a> можно найти большую коллекцию партий в этом формате.
+      
+      <p>Партии в го принимаются в формате SGF. Для игрового поля 9х9 записей партий не так много, как для 19х19, но примеры можно найти, например, <a href="https://homepages.cwi.nl/~aeb/go/games/games/other_sizes/9x9/">здесь</a>.</p>
+      
+      <p>Код порождает изображения доски перед началом партии и после каждого игрового хода. Все изображения сохраняются в специально заданную директорию.</p>
+      
+      <p>Запуск скрипта в командной строке с параметрами: файл chess_game.pgn, файл go_game.sgf и директория "pictures_dir", в которую будут сохраняться изображения доски:</p>
+
+      <div class="hero-unit">
+        <p>python generate_game.py chess_game.pgn go_game.sgf pictures_dir</p>
+        <p><a href="https://github.com/nevmenandr/duathlon/code/generate_game.py" class="btn btn-primary btn-large">Скачать код</a></p>
+      </div>
+      
+      <p>Если имена файлов или директории не указаны, то будут взяты значения по умолчанию: файл <a href="https://github.com/nevmenandr/duathlon/games/1.pgn">1.pgn</a>, файл <a href="https://github.com/nevmenandr/duathlon/games/1.sgf">1.sgf</a> и имя директории: "<a href="https://github.com/nevmenandr/duathlon/pics">chess-gif</a>".</p>
+      
+      <p>Картинки можно соединить в gif-анимацию с помощью вот такого скрипта:</p>
+      
+      <div class="hero-unit">
+<p>import os<br/>
+import imageio</p>
+
+<p>images = [ ]<br/>
+for filename in sorted(os.listdir('chess-gif')):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images.append(imageio.imread(os.path.join('chess-gif', filename)))<br/>
+imageio.mimsave(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'1chegoss.gif',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format="GIF",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration=3,<br/>
+)</p>
+        <p><a href="https://github.com/nevmenandr/duathlon/code/gifmaker.py" class="btn btn-primary btn-large">Скачать код</a></p>
+      </div>
+      
+      <p>&nbsp;</p>
+
+      <hr>
+      
+      <div class="footer">
+        <p><a href="http://nevmenandr.net/bo.php">Борис Орехов</a> 2023</p>
+      </div>
+
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jscss/jquery.js"></script>
+    <script src="jscss/bootstrap-transition.js"></script>
+    <script src="jscss/bootstrap-alert.js"></script>
+    <script src="jscss/bootstrap-modal.js"></script>
+    <script src="jscss/bootstrap-dropdown.js"></script>
+    <script src="jscss/bootstrap-scrollspy.js"></script>
+    <script src="jscss/bootstrap-tab.js"></script>
+    <script src="jscss/bootstrap-tooltip.js"></script>
+    <script src="jscss/bootstrap-popover.js"></script>
+    <script src="jscss/bootstrap-button.js"></script>
+    <script src="jscss/bootstrap-collapse.js"></script>
+    <script src="jscss/bootstrap-carousel.js"></script>
+    <script src="jscss/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
