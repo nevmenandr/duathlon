@@ -230,7 +230,7 @@ def main():
         go_game = go_game[: len(chess_game) + 1]
 
     if not os.path.exists(target_dir):
-        makedirs(target_dir)
+        os.makedirs(target_dir)
 
     ii = 0
     for i, move in enumerate(chess_game):
